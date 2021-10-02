@@ -1,0 +1,85 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header{
+    border-radius: 11px;
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+.my-to-do-list{
+    margin: 5px;
+}
+.add-button{
+    background-color: #84817a;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 16px;
+    width: 30%;
+     border-radius: 11px;
+     border: none;
+}
+.add-button:hover {
+    background-color: #4b4b4b;
+}
+.to-do-input{
+    height: 30px;
+    width: 50%;
+    border-radius: 11px;
+  border:none;
+
+}
+.to-do-input:focus{
+    
+
+   }
+ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+ul li {
+  cursor: pointer;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  border-radius: 11px;
+}
+
+  ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+ul li:nth-child(odd):hover{
+    background-color: #84817a;
+    color: white;
+}
+ul li:nth-child(even):hover
+{
+    background-color: #84817a;
+    color: white;
+}
+
+.input-icons i {
+    position: absolute;
+    
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+    float: right;
+}
+  
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+  
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
