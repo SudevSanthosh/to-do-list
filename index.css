@@ -1,6 +1,13 @@
 body{
     font-family: 'Source Sans Pro', sans-serif;
 }
+@media(max width:800px){
+
+    body{
+        width:90%
+    }
+}
+
 
 .header{
     border-radius: 11px;
@@ -12,35 +19,23 @@ body{
 .my-to-do-list{
     margin: 5px;
 }
-.add-button{
-    background-color: #84817a;
-    padding: 10px 10px;
-    text-align: center;
-    font-size: 16px;
-    width: 30%;
-     border-radius: 11px;
-     border: none;
-}
-.add-button:hover {
-    background-color: #4b4b4b;
-}
+
 .to-do-input{
     height: 30px;
     width: 50%;
     border-radius: 11px;
   border:none;
-
+  outline: none;
 }
 .to-do-input:focus{
-    
-
-   }
-ul{
+    border: 2px solid black;
+}
+.task-list{
     margin: 0;
     padding: 0;
     text-align: center;
 }
-ul li {
+.task-list-item {
   cursor: pointer;
   padding: 12px 8px 12px 40px;
   background: #eee;
@@ -49,37 +44,32 @@ ul li {
   border-radius: 11px;
 }
 
-  ul li:nth-child(odd) {
+.task-list-item:nth-child(odd) {
   background: #f9f9f9;
 }
-ul li:nth-child(odd):hover{
+.task-list-item:nth-child(odd):hover{
     background-color: #84817a;
     color: white;
 }
-ul li:nth-child(even):hover
+.task-list-item:nth-child(even):hover
 {
     background-color: #84817a;
     color: white;
 }
+.add-item-button{
 
-.input-icons i {
-    position: absolute;
-    
-}
-  
-.input-icons {
-    width: 100%;
-    margin-bottom: 10px;
-    float: right;
-}
-  
-.icon {
-    padding: 10px;
-    min-width: 40px;
-}
-  
-.input-field {
-    width: 100%;
-    padding: 10px;
+    background-color: #d1d8e0;
+    border: none;
+    color: black;
+    padding: 8px 18px;
     text-align: center;
-}
+    font-size: 16px;
+    border-radius: 11px;
+  }
+  .fa{
+      float: right;
+  }
+  .add-item-button:hover{
+    background-color:#84817a;
+    color: white;
+  }
