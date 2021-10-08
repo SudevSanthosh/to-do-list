@@ -15,12 +15,14 @@
     
 <div  class="main-container">
   <h2 class="main-heading">My To Do List</h2>
-  <form>
+  <form onsubmit="return false;">
       <input type="text" class="to-do-input" id="taskInput" placeholder="Enter your task...">
-      <button type="button" class="add-item-button" value="Add Item" onclick="addNewItem()">+ Add</button>
+      <button type="button" class="add-item-button" onclick="addNewItem()">+ Add</button>
   </form>
+  
 </div>
 <ul class="task-list" id="taskList">
 </ul>
+<h3 id="taskComplete" class="task-complete-heading"></h3>
 </body>
 </html>
