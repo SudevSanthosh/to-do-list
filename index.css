@@ -8,6 +8,7 @@ body{
     color: white;
     text-align: center;
 }
+
 .main-heading{
     margin: 5px;
 }
@@ -50,10 +51,6 @@ body{
     background-color: #84817a;
     color: white;
 }
-.task-list-items.checked{
-  text-decoration: line-through;
-}
-
 .add-item-button{
 
     background-color: #d1d8e0;
@@ -84,6 +81,7 @@ body{
         background: white;
         color: #f44336;
     }
+
     .done-button{
       float: left;
       justify-content: center;
@@ -101,3 +99,4 @@ body{
     }
 
     
+

@@ -1,3 +1,4 @@
+
 //function to append new list items to to-do list
 
 function addNewItem()
@@ -23,9 +24,27 @@ function addNewItem()
         taskListItems.appendChild(doneButton);
         deleteButton.addEventListener('click',()=>this.deleteTask(taskList));
         doneButton.addEventListener('click',()=>this.doneTask(taskList))
+=======
+function addNewItem()
+{
+    var taskListItems = document.createElement("li");
+    taskListItems.className += "task-list-items"
+    var inputValue = document.getElementById("taskInput").value;
+    var textnode= document.createTextNode(inputValue);
+    taskListItems.appendChild(textnode);
+    if (inputValue === '') {
+        alert("Task cannot be empty");
+      } else {
+        document.getElementById("taskList").appendChild(taskListItems);
+        var deleteButton = document.createElement("button");
+        deleteButton.className += "delete-button"
+        deleteButton.innerHTML = "X";
+        taskListItems.appendChild(deleteButton);
+
       }
       document.getElementById("taskInput").value = "";
     }
+
 
 //function to remove list item from the list when "trash" button is pressed
 
