@@ -12,6 +12,7 @@ function addNewItem()
     checkBox.type='checkbox';
     checkBox.className += "task-done";
     taskListItem.appendChild(textnode);
+    
     if (inputValue === '') 
       {
         alert("Task cannot be empty");
@@ -36,8 +37,9 @@ function addNewItem()
       for(var i=0; i < closeButton.length;i++)
        {
          closeButton[i].onclick = function() {
-        var div =this.parentElement;
-         div.style.display= "none";
+        this.parentElement.remove();
+        doneTask();
+        
        }
     }
 }
