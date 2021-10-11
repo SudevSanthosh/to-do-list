@@ -1,47 +1,30 @@
-
-//function to append new list items to to-do list
-
-function addNewItem()
-{   
-    let taskListItems = document.createElement("li");            //declaring new variables
-    let deleteButton = document.createElement("button");
-    let doneButton = document.createElement("button");
-    var inputValue = document.getElementById("taskInput").value;
-    var textnode= document.createTextNode(inputValue);
-    doneButton.className += "done-button"                        //classnames for new elements
-    taskListItems.className += "task-list-items"
-    deleteButton.className += "delete-button"
-    taskListItems.appendChild(textnode);
-    if (inputValue === '') 
-    {
-        alert("cant be empty");
-      } 
-      else {
-        document.getElementById("taskList").appendChild(taskListItems);
-        deleteButton.innerHTML = '<i class = "fa fa-trash"></i>';
-        taskListItems.appendChild(deleteButton);
-        doneButton.innerHTML = '<i class=" fa fa-check-square" aria-hidden="true"></i>';
-        taskListItems.appendChild(doneButton);
-        deleteButton.addEventListener('click',()=>this.deleteTask(taskList));
-        doneButton.addEventListener('click',()=>this.doneTask(taskList))
-=======
+//function to add buttons and li items
 function addNewItem()
 {
-    var taskListItems = document.createElement("li");
-    taskListItems.className += "task-list-items"
+    var taskListItem = document.createElement("li");
+    taskListItem.className += "task-list-items"
     var inputValue = document.getElementById("taskInput").value;
     var textnode= document.createTextNode(inputValue);
-    taskListItems.appendChild(textnode);
-    if (inputValue === '') {
+    var deleteButton = document.createElement("button");
+    deleteButton.className += "delete-button"
+    deleteButton.innerHTML = '<i class = "fa fa-trash"></i>';
+    var checkBox = document.createElement("input");
+    checkBox.type='checkbox';
+    checkBox.className += "task-done";
+    taskListItem.appendChild(textnode);
+    
+    if (inputValue === '') 
+      {
         alert("Task cannot be empty");
-      } else {
-        document.getElementById("taskList").appendChild(taskListItems);
-        var deleteButton = document.createElement("button");
-        deleteButton.className += "delete-button"
-        deleteButton.innerHTML = "X";
-        taskListItems.appendChild(deleteButton);
-
-      }
+      } 
+    else {
+        document.getElementById("taskList").appendChild(taskListItem);
+        taskListItem.appendChild(deleteButton);
+        taskListItem.appendChild(checkBox);
+        doneTask();
+        checkBox.addEventListener('click',()=>this.doneTask());
+        deleteButton.addEventListener('click',()=>this.deleteTask());
+        }  
       document.getElementById("taskInput").value = "";
     }
 
@@ -49,30 +32,34 @@ function addNewItem()
 //function to remove list item from the list when "trash" button is pressed
 
  function deleteTask()
-  {
+  { 
     var closeButton = document.getElementsByClassName("delete-button");
       for(var i=0; i < closeButton.length;i++)
        {
-         closeButton[i].onclick = function() {
-         var div =this.parentElement;
-         div.style.display= "none";
-        }
+        closeButton[i].onclick = function() {
+        this.parentElement.remove();
+        doneTask();
+        
+       }
     }
 }
 
-//function to strike out list when "check" button is pressed
-
-function doneTask()
+//function to get the count detail of task status
+function doneTask() {
+  var item = document.getElementsByTagName("input");
+  var totalCheckbox=0;
+  var checkedCheckbox=0;
+  for(var j=0;j<item.length;j++)
   {
-    var donebtn = document.getElementsByClassName("done-button");
-    for(var i=0; i < donebtn.length;i++) {
-      donebtn[i].onclick = function() {
-        var div =this.parentElement;
-        div.style.textDecoration= "line-through";
-        div.style.background="#485460";
-        div.style.color="white"; 
-      }
+    if (item[j].type === "checkbox")
+    {
+      totalCheckbox=totalCheckbox+1;
     }
+    if (item[j].checked === true) 
+    {
+      checkedCheckbox=checkedCheckbox+1;
+    }
+    
+  }
+  document.getElementById("taskComplete").innerHTML = checkedCheckbox + " Task done out of " + totalCheckbox;
 }
-
-

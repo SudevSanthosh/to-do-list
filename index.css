@@ -8,7 +8,6 @@ body{
     color: white;
     text-align: center;
 }
-
 .main-heading{
     margin: 5px;
 }
@@ -30,13 +29,14 @@ body{
 }
 
 .task-list-items{
-  cursor: pointer;
+  
   padding: 12px 8px 12px 40px;
   background: #eee;
   font-size: 18px;
   transition: 0.2s;
   border-radius: 11px;
   justify-content: center;
+  
 }
 
 .task-list-items:nth-child(odd) {
@@ -51,6 +51,10 @@ body{
     background-color: #84817a;
     color: white;
 }
+.task-list-items.checked{
+  text-decoration: line-through;
+}
+
 .add-item-button{
 
     background-color: #d1d8e0;
@@ -61,6 +65,7 @@ body{
     font-size: 16px;
     border-radius: 11px;
     font-weight: bold;
+    cursor: pointer;
   }
   .add-item-button:hover{
     background-color:#84817a;
@@ -75,28 +80,20 @@ body{
       font-weight: bolder;
       color: white;
       border: none;
+      cursor: pointer;
 
     }
     .delete-button:hover{
         background: white;
         color: #f44336;
     }
-
-    .done-button{
+    .task-done{
       float: left;
-      justify-content: center;
-      background: #27ae60;
-      border-radius:7px;
-      font-weight: bolder;
-      color: white;
+    }
+
+.task-complete-heading{
+      
       font-size: 16px;
-      border: none;
-
+      font-weight: bold;
+      color: #84817a;
     }
-    .done-button:hover{
-      background: white;
-      color:#27ae60; 
-    }
-
-    
-
