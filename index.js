@@ -36,7 +36,7 @@ function addNewItem()
     var closeButton = document.getElementsByClassName("delete-button");
       for(var i=0; i < closeButton.length;i++)
        {
-         closeButton[i].onclick = function() {
+        closeButton[i].onclick = function() {
         this.parentElement.remove();
         doneTask();
         
